@@ -1,21 +1,8 @@
 import express from  'express';
+import * as bookController from '../controller/bookController.js';
 
 const router =express.Router();
 
-router.get('/',(req,res) => {
-
-    const books = [
-        {
-            id:1,
-            name:" 13 nomera oada"
-        },
-        {
-            id:2,
-            name:"cinayet defteri"
-        }
-    ];
-
-    res.json(books);
-});
+router.use('/',bookController.getAllBooks);
 
 export default router;
